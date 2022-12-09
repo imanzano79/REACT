@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 
-import {Navbar, NavbarBrand, NavItem, Nav, NavLink, NavbarText, DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, NavbarToggler  } from 'reactstrap'
+import {Navbar, NavbarBrand, NavItem, Nav, NavLink, NavbarText, DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, } from 'reactstrap'
 
 // const nombre = "Manzano";
 const brand = "We love Beer";
