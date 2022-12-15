@@ -2,16 +2,22 @@
 import './App.css';
 
 import {Navbar, NavbarBrand, NavItem, Nav, NavLink, NavbarText, DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, } from 'reactstrap'
+import { CupStraw } from 'react-bootstrap-icons';
+import { AirplaneEngines } from 'react-bootstrap-icons';
+import { Component } from 'react';
+
 
 // const nombre = "Manzano";
-const brand = "We love Beer";
+const brand = "We love Beer (Class)";
 
-function App() {
+class App extends Component {
+
+  render(){
   return (
 
     <div className='App'>
         <Navbar>
-        <NavbarBrand href="/">{brand} </NavbarBrand>        
+        <NavbarBrand href="/">{brand} <CupStraw/> <AirplaneEngines/> </NavbarBrand>        
           <Nav className="me-auto" >
             <NavItem>
               <NavLink href="/components/">Components</NavLink>
@@ -37,7 +43,9 @@ function App() {
       </Navbar>
       
     </div>   
-  );
+    );
+  }
 }
+
 
 export default App;
