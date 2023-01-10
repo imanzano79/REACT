@@ -1,51 +1,40 @@
-// import logo from './logo.svg';
+
 import './App.css';
-
-import {Navbar, NavbarBrand, NavItem, Nav, NavLink, NavbarText, DropdownMenu, DropdownItem, UncontrolledDropdown, DropdownToggle, } from 'reactstrap'
-import { CupStraw } from 'react-bootstrap-icons';
-import { AirplaneEngines } from 'react-bootstrap-icons';
 import { Component } from 'react';
+import FavBeer from './components/FavBeer';
+import BeerList from './components/BeerList';
+import NavigationBar  from './components/NavigationBar';
 
 
-// const nombre = "Manzano";
-const brand = "We love Beer (Class)";
+export default class App extends Component {
 
-class App extends Component {
+
+  constructor(){
+    super();
+
+    this.state = {
+      cartItems : 0
+    }; 
+  }
+
+
+  onAddToCart = (e) =>{
+    this.setState((state) =>({
+      cartItems : state.cartItems + 1
+    }));
+  }
+
 
   render(){
-  return (
 
-    <div className='App'>
-        <Navbar>
-        <NavbarBrand href="/">{brand} <CupStraw/> <AirplaneEngines/> </NavbarBrand>        
-          <Nav className="me-auto" >
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
-              </NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>Option 1</DropdownItem>
-                <DropdownItem>Option 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Reset</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-      </Navbar>
+  return (
+   <div className="App">
+    <NavigationBar cartItems = {this.state.cartItems}/>
+    <FavBeer onAddToCart={this.onAddToCart} />
+    <BeerList/>    
+    </div>
+ 
       
-    </div>   
     );
   }
 }
-
-
-export default App;

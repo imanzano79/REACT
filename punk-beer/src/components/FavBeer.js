@@ -1,48 +1,52 @@
 
 
-import { AlignCenter } from 'react-bootstrap-icons';
-import {Card, CardBody, CardTitle, CardSubtitle, CardText, CardLink} from 'reactstrap';
+import {Card, CardTitle, CardText, Col, Row, CardHeader, Button} from 'reactstrap'
 
-function FavBeer (props) {
-    return(
 
-<Card
-  style={{
-    width: '18rem'
+function FavBeer(props){
+    return (
+      <Card className="col-sm-12 col-md-6 col-lg-4 mt-5 mx-auto">
+        <CardHeader>
+          Our favorite Beer Today
+        </CardHeader>
+        <Row>
+          <Col xs="4"> 
+          <img src="https://images.punkapi.com/v2/8.png" height={350} />
+          </Col>
+          <Col className="d-flex flex-column">
+            <CardTitle>
+            Fake Lager
+            </CardTitle>
+            <CardText>
+              Fake is the new black. Fake is where it is at. Fake Art, fake brands, fake breasts, and fake lager.
+            </CardText>
+            <div className="mt-auto">
+            <h2>
+              <small className="text-muted"><del>$4.7</del></small>
+              <small>/$4.4</small>
+              <Button color="info" outline>Agregar al Wish List</Button>
+              <Button color="primary" outline onClick={(e) => props.onAddToCart(e)}>Agregar al carrito</Button>
+            </h2>
+            </div>
+          </Col>
+        </Row>
+      </Card>
+
+    )
+
+
     
-  }}
->
-  <CardBody>
-    <CardTitle tag="h5">
-      Our Favorite Beer
-    </CardTitle>
-    <CardSubtitle
-      className="mb-2 text-muted"
-      tag="h6"
-    >
-      Card subtitle
-    </CardSubtitle>
-  </CardBody>
-  <img
-    alt="Card cap"
-    src="https://images.punkapi.com/v2/4.png"
-    width="50%"
-  />
-  <CardBody>
-    <CardText>
-    "Our Unleash the Yeast series was an epic experiment into the differences in aroma and flavour provided by switching up your yeast. We brewed up a wort with a light caramel note and some toasty biscuit flavour, and hopped it with Amarillo and Centennial for a citrusy bitterness. Everything else is down to the yeast. Pilsner yeast ferments with no fruity esters or spicy phenols, although it can add a hint of butterscotch."
-    </CardText>
-    <CardLink href="#">
-    Price: 17.5
-    </CardLink>
-    <CardLink href="#">
-      
-    </CardLink>
-  </CardBody>
-</Card>
-);
+    
 }
 
-export default FavBeer;
 
+
+
+
+
+
+
+
+
+export default FavBeer;
 
